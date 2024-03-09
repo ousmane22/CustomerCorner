@@ -23,9 +23,15 @@ namespace CustomerCorner.Application.Features.Users.Commands.CreateUser
         public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             var user  =  _mapper.Map<User>(request);
-            user = await _userRepository.AddAsync(user);
 
-            return request.Id;
+            var validator = new CreateUserCommandValidator();
+            var validationResult = await validator.ValidateAsync(request);
+
+            if (validationResult.Errors.Count > 0)
+                throw new Exceptions.ValidationException(validationResult);
+
+            user = await _userRepository.AddAsync(user);
+            return user.Id;
         }
     }
 }
