@@ -1,7 +1,10 @@
 ﻿using CustomerCorner.API.Middleware;
 using CustomerCorner.Application;
 using CustomerCorner.Identity;
+using CustomerCorner.Identity.Models;
 using CustomerCorner.Persistence;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace CustomerCorner.API
 {
@@ -36,6 +39,14 @@ namespace CustomerCorner.API
         public static WebApplication ConfigurePipeline
             (this WebApplication app)
         {
+            app.MapIdentityApi<ApplicationUser>();
+
+            app.MapPost("/Logout", async (ClaimsPrincipal user, SignInManager<ApplicationUser> signInManager) =>
+            {
+                await signInManager.SignOutAsync();
+                return TypedResults.Ok();
+            });
+
             app.UseCors("open");
 
             if (app.Environment.IsDevelopment())
