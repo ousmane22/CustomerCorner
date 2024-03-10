@@ -14,7 +14,7 @@ namespace CustomerCorner.Application.Features.Users.Commands.CreateUser
             RuleFor(u => u.Name)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
-                .MaximumLength(50).WithMessage(("{PropertyName} must not exceed 50 characters.");
+                .MaximumLength(50).WithMessage(("{PropertyName} must not exceed 50 characters."));
 
         }
     }
