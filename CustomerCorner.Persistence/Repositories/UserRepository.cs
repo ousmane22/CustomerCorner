@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CustomerCorner.Persistence.Repositories
 {
-    public class UserRepository : BaseRepository<User>, IUserRepository>
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
         public UserRepository(CustomerCornerDbContext customerCornerDbContext) : base(customerCornerDbContext)
         {
