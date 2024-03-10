@@ -1,5 +1,6 @@
 ﻿using CustomerCorner.API.Middleware;
 using CustomerCorner.Application;
+using CustomerCorner.Identity;
 using CustomerCorner.Persistence;
 
 namespace CustomerCorner.API
@@ -11,6 +12,7 @@ namespace CustomerCorner.API
         {
             builder.Services.AddApplicationServices();
             builder.Services.AddPersistenceServices(builder.Configuration);
+            builder.Services.AddIdentityServices(builder.Configuration);
 
             builder.Services.AddControllers();
 
@@ -25,6 +27,7 @@ namespace CustomerCorner.API
                     .AllowAnyHeader()
                     .AllowCredentials()));
 
+            builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             return builder.Build();

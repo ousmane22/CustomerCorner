@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerCorner.Persistence"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerCorner.API", "CustomerCorner.API\CustomerCorner.API.csproj", "{36C35190-B42C-45DA-87B0-261B20B280CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerCorner.Identity", "CustomerCorner.Identity\CustomerCorner.Identity.csproj", "{6068EAA8-E292-4A26-9B51-85BE75C8EAAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{36C35190-B42C-45DA-87B0-261B20B280CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36C35190-B42C-45DA-87B0-261B20B280CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36C35190-B42C-45DA-87B0-261B20B280CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6068EAA8-E292-4A26-9B51-85BE75C8EAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6068EAA8-E292-4A26-9B51-85BE75C8EAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6068EAA8-E292-4A26-9B51-85BE75C8EAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6068EAA8-E292-4A26-9B51-85BE75C8EAAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{A20E85E0-CADE-406E-97AF-83A37B0BF19B} = {60571FBA-BEF1-47DC-85CC-32A9E83BEB22}
 		{62AA5584-0CDE-4991-B3F4-285DF5EF74B8} = {841A8697-67BA-462F-8737-C9DF871E9470}
 		{36C35190-B42C-45DA-87B0-261B20B280CA} = {611555BC-A7AC-41A0-8FF4-508BED5BAF29}
+		{6068EAA8-E292-4A26-9B51-85BE75C8EAAF} = {841A8697-67BA-462F-8737-C9DF871E9470}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F11B479E-2422-4DA9-89D9-F7ED576C7646}

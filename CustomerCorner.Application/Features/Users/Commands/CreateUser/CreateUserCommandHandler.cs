@@ -15,13 +15,12 @@ namespace CustomerCorner.Application.Features.Users.Commands.CreateUser
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
-        private readonly ILogger<CreateUserCommandHandler> _logger;
+       // private readonly ILogger<CreateUserCommandHandler> _logger;
 
-        public CreateUserCommandHandler(IUserRepository userRepository , IMapper mapper, ILogger<CreateUserCommandHandler> logger)
+        public CreateUserCommandHandler(IUserRepository userRepository , IMapper mapper)
         {
             _mapper = mapper;
             _userRepository = userRepository;
-            _logger = logger;
         }
         public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {

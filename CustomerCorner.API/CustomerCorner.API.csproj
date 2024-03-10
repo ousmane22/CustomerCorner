@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CustomerCorner.Application\CustomerCorner.Application.csproj" />
+    <ProjectReference Include="..\CustomerCorner.Identity\CustomerCorner.Identity.csproj" />
     <ProjectReference Include="..\CustomerCorner.Persistence\CustomerCorner.Persistence.csproj" />
   </ItemGroup>
 
