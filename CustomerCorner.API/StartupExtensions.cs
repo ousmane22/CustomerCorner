@@ -1,4 +1,5 @@
-﻿using CustomerCorner.Application;
+﻿using CustomerCorner.API.Middleware;
+using CustomerCorner.Application;
 using CustomerCorner.Persistence;
 
 namespace CustomerCorner.API
@@ -39,6 +40,8 @@ namespace CustomerCorner.API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCustomExceptionHandler();
 
             app.UseHttpsRedirection();
             app.MapControllers();

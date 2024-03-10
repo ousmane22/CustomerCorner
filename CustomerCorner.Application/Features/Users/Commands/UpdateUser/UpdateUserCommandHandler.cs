@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CustomerCorner.Application.Contracts.Persistence;
+using CustomerCorner.Application.Exceptions;
 using CustomerCorner.Domain.Entities;
 using MediatR;
 using System;
@@ -25,6 +26,17 @@ namespace CustomerCorner.Application.Features.Users.Commands.UpdateUser
         public async Task Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
            var userToUpdate = await _userRepository.GetByIdAsync(request.Id);
+
+            if(userToUpdate == null)
+            {
+                throw new NotFoundException(nameof(User), request.Id);
+            }
+
+            var validator = new UpdateUserCommandValidator();
+            var validatorResult = await validator.ValidateAsync(request);
+
+            if (validatorResult.Errors.Count > 0)
+                throw new ValidationException(validatorResult);
 
             _mapper.Map(request, userToUpdate, typeof(UpdateUserCommand), typeof(User));
 
