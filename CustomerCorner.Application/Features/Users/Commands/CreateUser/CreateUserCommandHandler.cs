@@ -2,6 +2,7 @@
 using CustomerCorner.Application.Contracts.Persistence;
 using CustomerCorner.Domain.Entities;
 using MediatR;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,13 @@ namespace CustomerCorner.Application.Features.Users.Commands.CreateUser
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger<CreateUserCommandHandler> _logger;
 
-        public CreateUserCommandHandler(IUserRepository userRepository , IMapper mapper)
+        public CreateUserCommandHandler(IUserRepository userRepository , IMapper mapper, ILogger<CreateUserCommandHandler> logger)
         {
             _mapper = mapper;
             _userRepository = userRepository;
+            _logger = logger;
         }
         public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
